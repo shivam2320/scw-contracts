@@ -220,6 +220,7 @@ contract SmartWallet is
         require(_entryPointAddress != address(0), "Invalid Entrypoint");
         require(_handler != address(0), "Invalid Entrypoint");
         owner = _owner;
+        others = _others;
         _entryPoint = IEntryPoint(payable(_entryPointAddress));
         if (_handler != address(0)) internalSetFallbackHandler(_handler);
         setupModules(address(0), bytes(""));
